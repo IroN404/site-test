@@ -72,6 +72,17 @@
     transform: rotate(360deg);
   }
 }
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: none;
+}
+
     </style>
     <script>
         function calculer() {
@@ -91,8 +102,13 @@
           
   </head>
   <body onload="calculer()">
+    <div id="overlay" class="overlay"></div>
     <header>
       <h1>Gaetan est GAY</h1>
+      <div id="mon-div">
+        <audio controls autoplay id="mon-audio">
+          <source src="data/song.mp3" type="audio/mpeg">
+        </audio>
     </header>
     <section>
       <article>
@@ -120,9 +136,5 @@
     <section>
         <p>Nombre de jours que gaetan n'as pas touché une femme : <span id="resultat"></span></p>
     </section>
-    <div id="mon-div">
-        <audio controls autoplay id="mon-audio">
-          <source src="data/song.mp3" type="audio/mpeg">
-        </audio>
   </body>
 </html>
