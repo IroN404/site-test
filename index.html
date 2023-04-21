@@ -74,25 +74,23 @@
 }
     </style>
     <script>
-  function calculer() {
-    // Récupérer la date entrée par l'utilisateur
-    var dateInput = 2002-02-10
-
-    // Convertir la date en millisecondes
-    var date = new Date(dateInput).getTime();
-
-    // Calculer le nombre de jours écoulés depuis cette date
-    var maintenant = new Date().getTime();
-    var difference = maintenant - date;
-    var jours = Math.floor(difference / (1000 * 60 * 60 * 24));
-
-    // Afficher le résultat dans l'élément "span"
-    document.getElementById("resultat").innerHTML = jours;
-  }
-   </script>
-
+        function calculer() {
+          // Date de référence : 12 février 2002
+          var dateReference = new Date("2002-02-12").getTime();
+      
+          // Calculer le nombre de jours écoulés depuis cette date
+          var maintenant = new Date().getTime();
+          var difference = maintenant - dateReference;
+          var jours = Math.floor(difference / (1000 * 60 * 60 * 24));
+      
+          // Afficher le résultat dans l'élément "span"
+          document.getElementById("resultat").innerHTML = jours;
+          document.getElementById("mon-audio").play();
+        }
+      </script>
+          
   </head>
-  <body>
+  <body onload="calculer()">
     <header>
       <h1>Gaetan est GAY</h1>
     </header>
@@ -100,26 +98,31 @@
       <article>
         <h2>Raison</h2>
         <p>Il est gay</p>
-        <a href="#">Lire la suite</a>
+        <img src="data/IMG_0993.JPG" style="width: 100%;">
       </article>
       <article>
         <h2>Raison 2</h2>
         <p>Ses abonnements twitter</p>
-        <a href="#">Lire la suite</a>
+        <img src="data/capture.png" style="width: 100%;">
+        
       </article>
       <article>
         <h2>Raison 3</h2>
         <p>Mais les mecs ...</p>
-        <a href="#">Lire la suite</a>
+        <img src="data/IMG_0992.JPG" style="width: 100%;">
       </article>
     </section>
     <section class="images">
         <img src="data/21-6W5W4AKL._AC_SX425_.jpg">
         <img src="data/Gay_flag_8.svg.png">
         <img src="data/Unknown.png">
-      </section>     
+      </section> 
     <section>
-      <p>Nombre de jours que getan n'as pas touché un femme : <span id="resultat"></span></p>
+        <p>Nombre de jours que gaetan n'as pas touché une femme : <span id="resultat"></span></p>
     </section>
+    <div id="mon-div">
+        <audio controls autoplay id="mon-audio">
+          <source src="data/song.mp3" type="audio/mpeg">
+        </audio>
   </body>
 </html>
