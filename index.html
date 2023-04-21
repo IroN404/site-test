@@ -73,6 +73,24 @@
   }
 }
     </style>
+    <script>
+  function calculer() {
+    // Récupérer la date entrée par l'utilisateur
+    var dateInput = 2002-02-10
+
+    // Convertir la date en millisecondes
+    var date = new Date(dateInput).getTime();
+
+    // Calculer le nombre de jours écoulés depuis cette date
+    var maintenant = new Date().getTime();
+    var difference = maintenant - date;
+    var jours = Math.floor(difference / (1000 * 60 * 60 * 24));
+
+    // Afficher le résultat dans l'élément "span"
+    document.getElementById("resultat").innerHTML = jours;
+  }
+   </script>
+
   </head>
   <body>
     <header>
@@ -99,6 +117,9 @@
         <img src="data/21-6W5W4AKL._AC_SX425_.jpg">
         <img src="data/Gay_flag_8.svg.png">
         <img src="data/Unknown.png">
-      </section>      
+      </section>     
+    <section>
+      <p>Nombre de jours que getan n'as pas touché un femme : <span id="resultat"></span></p>
+    </section>
   </body>
 </html>
